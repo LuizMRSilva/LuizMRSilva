@@ -1,3 +1,6 @@
+// CAVALEIRO DA MATEMÁTICA.
+// Códigos.
+
 {var tela = 1;
 var largura = 175;
 var altura = 40;
@@ -37,7 +40,8 @@ let piso;
 let spriteiig;
 let inform
 let bros
-} // Variáveis e let
+var esc = ['Aperte "ESC" para retornar ao menu inicial.', 'Para jogar novamente, reinicie o jogo.'];
+} // Variáveis e let.
 
 function preload() {
   fundo = loadImage("Menu Inicial/bg.png"); // Background da tela inicial.
@@ -54,12 +58,12 @@ function preload() {
   // Imagens
   mymusic = loadSound("Menu Inicial/Song.mp3");
   // Músicas
-} // Imagens e Músicas
+} // Imagens e Músicas.
 
 function setup() {
   createCanvas(450, 300);
   mymusic.play();
-}
+} // Função responsável por configurar o ambiente.
 
 function draw() {
   textStyle(NORMAL);
@@ -179,6 +183,7 @@ function draw() {
     textAlign(RIGHT);
     textStyle(BOLD);
     text("Quanto é 5+5?", 150, 30);
+    
 
     fill(240);
     stroke("#222222");
@@ -215,6 +220,19 @@ function draw() {
     if (dist(xresposta1, yresposta1, xperso, yperso) < rresposta1 + rperso) {
       tela = 8;
     }
+    
+   fill('yellow');
+ noStroke(0);
+ translate(300, 30);
+ i=0
+ while (i<31)
+ {
+   ellipse(15, 30, 5, 15);
+  rotate(PI|15);
+  
+  i++;
+ }
+
   }
   // Informações
   else if (tela == 3) {
@@ -241,7 +259,7 @@ function draw() {
     textStyle(BOLD);
     textSize(11);
     fill(50);
-    text('Aperte "ESC" para retornar ao menu inicial.', 435, 290);
+    text((esc)[0], 435, 290);
     
 
     if (
@@ -299,7 +317,7 @@ function draw() {
     textStyle(BOLD);
     textSize(11);
     fill(50);
-    text('Aperte "ESC" para retornar ao menu inicial.', 435, 290);
+    text((esc)[0], 435, 290);
   }
   // Tela win
   else if (tela == 5) {
@@ -320,7 +338,7 @@ function draw() {
     textStyle(BOLD);
     textSize(11);
     fill(200);
-    text('Para jogar novamente, reinicie o jogo.', 435, 290);
+    text((esc)[1], 435, 290);
   }
   // Tela mais informações
   else if (tela == 6) {
@@ -486,7 +504,7 @@ function draw() {
     fill(200);
     text('Para jogar novamente, reinicie o jogo.', 350, 150);
 }
-}
+} // Função de desenho.
 
 function keyPressed() {
   if (key == "Escape") {
